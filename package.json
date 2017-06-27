@@ -1,11 +1,11 @@
 {
-  "name": "chat-app-client",
+  "name": "chat-app-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "6.10.3",
-    "npm": "3.10.10"
+    "node": "6.10.2",
+    "npm": "4.2.0"
   },
   "scripts": {
     "server:dev": "nodemon ./src/index",
