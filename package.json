@@ -9,7 +9,7 @@
   },
   "scripts": {
     "server:dev": "nodemon ./src/index",
-    "server:prod": "./src/index"
+    "server:prod": "node ./src/index"
   },
   "repository": {
     "type": "git",
