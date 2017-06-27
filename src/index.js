@@ -12,7 +12,8 @@ const router = require('./router');
 //CONNECT SERVER WITH DATABSE--Database Connection
 mongoose.Promise = global.Promise;
 require('dotenv').config();
-mongoose.connect(config.database)
+mongoose.connect('mongodb://i7salas:i7salas@ds139322.mlab.com:39322/slackclonedb')
+// mongoose.connect(config.database)
 .then(
   ()=> console.log('🤘 🤘 🤘 🤘 connected to mongo'),
   error => console.log(`🤕 🤕 🤕 🤕 mongo fail.\nDetails: ${error}`)
@@ -37,30 +38,6 @@ app.use(bodyParser.json());
 
 //ROUTER
 router(app);
-
-//SOKETS
-// var usernames = {};
-// io.sockets.on('connection', function (socket) {
-//   console.log('Alguien se ha conectado!! Socke id: ' + socket.id);
-
-//   // when the client emits 'sendchat', this listens and executes
-//   socket.on('sendchat', (data) => {
-//     console.log('chat (data): ',data);
-//     // we tell the client to execute 'updatechat' with 2 parameters
-//     io.sockets.emit('updatechat', socket.username, data);
-//   });
-
-//   // when the user disconnects
-//   socket.on('disconnect', function(){
-//     // remove the username from global usernames list
-//     delete usernames[socket.username];
-//     // update list of users in chat, client-side
-//     io.sockets.emit('updateusers', usernames);
-//     // echo globally that this client has left
-//     socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
-//     //socket.leave(socket.room);
-//   });
-// });
 
 
 io.sockets.on('connection', function(socket){

@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
   "scripts": {
-    "start:server": "nodemon ./src/index"
+    "server:dev": "nodemon ./src/index",
+    "server:prod": "node ./src/index"
   },
   "repository": {
     "type": "git",
